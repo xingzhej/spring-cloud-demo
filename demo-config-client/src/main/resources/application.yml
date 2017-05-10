@@ -1,0 +1,14 @@
+server:
+  port: 2005
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1001/eureka/
+  instance:
+    prefer-ip-address: true
+management:
+  security:
+    enabled: false
+spring:
+  application:
+    name: demo-config-client

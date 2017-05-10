@@ -1,0 +1,7 @@
+read me:
+内部服务消费者通过rabbon调用
+1、api-a1为普通路由配置，直接配置http地址
+2、api-a为服务方式配置，通过ribbon实现服务的负载均衡
+3、api-c为通过服务方式配置，直接将api-c的请求转发至DEMO-SERVICE-PROVIDER-C服务执行
+3、api-b为通过服务方式配置，直接将api-b的请求转发至DEMO-SERVICE-PROVIDER-b服务执行,为第三类的简化形式
+5、通过过滤器过滤掉所有的delete操作，本例中主要是服务b中的delete服务

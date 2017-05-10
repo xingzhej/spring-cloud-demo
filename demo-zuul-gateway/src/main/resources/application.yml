@@ -1,0 +1,32 @@
+server:
+  port: 8080
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1001/eureka/
+  instance:
+    prefer-ip-address: true
+management:
+  security: 
+    enabled: false
+spring:
+  application:
+    name: demo-zuul-gateway
+
+zuul:
+  routes: 
+    api-a: 
+      path: /api-a1/** 
+      url: http://localhost:2001
+    api-b: 
+      path: /api-a/**
+      serviceId: DEMO-SERVICE-PROVIDER-A
+    api-c: 
+      path: /api-c/**
+      serviceId: DEMO-SERVICE-PROVIDER-C
+    DEMO-SERVICE-PROVIDER-B: /api-b/**
+DEMO-SERVICE-PROVIDER-A: 
+  ribbon: 
+    listOfServers: http://localhost:2001,http://localhost:2002
+    
+    

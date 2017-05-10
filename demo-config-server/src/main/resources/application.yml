@@ -1,0 +1,21 @@
+server:
+  port: 7001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1001/eureka/
+  instance:
+    prefer-ip-address: true
+management:
+  security:
+    enabled: false
+spring:
+  application:
+    name: demo-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://10.18.100.77/microservice/spring-boot-jh.git
+          username: 18919312193
+          password: 88888888

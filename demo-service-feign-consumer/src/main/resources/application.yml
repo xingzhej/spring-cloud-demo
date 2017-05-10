@@ -1,0 +1,18 @@
+server:
+  port: 3002
+spring:
+  application:
+    name: demo-service-feign-consumer
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1001/eureka/
+  instance: 
+    prefer-ip-address: true
+management:
+  security: 
+    enabled: false
+#feign从D版本开始，默认为false，因此，如需要支持断路器，则需要在这里设置为true
+feign:
+  hystrix: 
+   enabled: true
